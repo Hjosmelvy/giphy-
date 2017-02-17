@@ -24,26 +24,18 @@ $(document).ready(function() {
         
          if( listOfTrains[i].includes($("#userSearch").val().toUpperCase()) ){
           console.log(response[i].name+":"+response[i].status);
-             $("#info").append(response[i].name + " : " + response[i].status + "<br>");
+             $("#info").append("<h4 id='delayInfo'> <strong>"+ response[i].name + " : " + response[i].status + "</strong> </h1> <br>");
          } 
        }
        });
   
-
-
-
-    
-    
      console.log(listOfTrains);
-
-
-
-
-
-
-
-
-
   });
 
+});
+
+$("#userSearch").keyup(function(event){
+    if(event.keyCode === 13){
+        $("#userButton").click();
+    }
 });
